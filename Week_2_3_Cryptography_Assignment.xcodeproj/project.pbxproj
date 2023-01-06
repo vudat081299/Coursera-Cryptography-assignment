@@ -127,8 +127,9 @@
 		84A6EBBC2967505A00F103A7 /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6EB4E2967505900F103A7 /* BigInt.swift */; };
 		84A6EBBD2967505A00F103A7 /* String Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6EB4F2967505900F103A7 /* String Conversion.swift */; };
 		84A6EBBE2967505A00F103A7 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6EB502967505900F103A7 /* Array+Extension.swift */; };
-		84A6EBC02967510E00F103A7 /* 6.1.intro.mp4_download in Resources */ = {isa = PBXBuildFile; fileRef = 84A6EBBF2967506500F103A7 /* 6.1.intro.mp4_download */; };
 		84A6EBC22967776900F103A7 /* RequestEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6EBC12967776900F103A7 /* RequestEngine.swift */; };
+		C404598C2967D8FE00ED1410 /* PaddingOracleAttack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C404598B2967D8FE00ED1410 /* PaddingOracleAttack.swift */; };
+		C404598E2967D91E00ED1410 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = C404598D2967D91E00ED1410 /* Hash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -273,8 +274,9 @@
 		84A6EB4E2967505900F103A7 /* BigInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigInt.swift; sourceTree = "<group>"; };
 		84A6EB4F2967505900F103A7 /* String Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String Conversion.swift"; sourceTree = "<group>"; };
 		84A6EB502967505900F103A7 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
-		84A6EBBF2967506500F103A7 /* 6.1.intro.mp4_download */ = {isa = PBXFileReference; lastKnownFileType = file; path = 6.1.intro.mp4_download; sourceTree = "<group>"; };
 		84A6EBC12967776900F103A7 /* RequestEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEngine.swift; sourceTree = "<group>"; };
+		C404598B2967D8FE00ED1410 /* PaddingOracleAttack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingOracleAttack.swift; sourceTree = "<group>"; };
+		C404598D2967D91E00ED1410 /* Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,13 +331,14 @@
 				84A6EAA72967504700F103A7 /* AppDelegate.swift */,
 				84A6EAA92967504700F103A7 /* SceneDelegate.swift */,
 				84A6EAAB2967504700F103A7 /* ViewController.swift */,
+				C404598B2967D8FE00ED1410 /* PaddingOracleAttack.swift */,
+				C404598D2967D91E00ED1410 /* Hash.swift */,
 				84A6EBC12967776900F103A7 /* RequestEngine.swift */,
 				84A6EAAD2967504700F103A7 /* Main.storyboard */,
 				84A6EAB32967504900F103A7 /* Assets.xcassets */,
 				84A6EAB52967504900F103A7 /* LaunchScreen.storyboard */,
 				84A6EAB82967504900F103A7 /* Info.plist */,
 				84A6EAB02967504700F103A7 /* Week_2_3_Cryptography_Assignment.xcdatamodeld */,
-				84A6EBBF2967506500F103A7 /* 6.1.intro.mp4_download */,
 			);
 			path = Week_2_3_Cryptography_Assignment;
 			sourceTree = "<group>";
@@ -645,7 +648,6 @@
 				84A6EAB72967504900F103A7 /* LaunchScreen.storyboard in Resources */,
 				84A6EAB42967504900F103A7 /* Assets.xcassets in Resources */,
 				84A6EAAF2967504700F103A7 /* Main.storyboard in Resources */,
-				84A6EBC02967510E00F103A7 /* 6.1.intro.mp4_download in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,6 +733,7 @@
 				84A6EB8E2967505A00F103A7 /* DigestType.swift in Sources */,
 				84A6EBB92967505A00F103A7 /* Shifts.swift in Sources */,
 				84A6EBC22967776900F103A7 /* RequestEngine.swift in Sources */,
+				C404598E2967D91E00ED1410 /* Hash.swift in Sources */,
 				84A6EBB02967505A00F103A7 /* Square Root.swift in Sources */,
 				84A6EB942967505A00F103A7 /* PKCS7Padding.swift in Sources */,
 				84A6EB8A2967505A00F103A7 /* Updatable.swift in Sources */,
@@ -755,6 +758,7 @@
 				84A6EB962967505A00F103A7 /* PKCS7.swift in Sources */,
 				84A6EB532967505A00F103A7 /* ASN1Encoder.swift in Sources */,
 				84A6EBBA2967505A00F103A7 /* Subtraction.swift in Sources */,
+				C404598C2967D8FE00ED1410 /* PaddingOracleAttack.swift in Sources */,
 				84A6EBA62967505A00F103A7 /* ChaCha20.swift in Sources */,
 				84A6EB5C2967505A00F103A7 /* ISO10126Padding.swift in Sources */,
 				84A6EB852967505A00F103A7 /* Operators.swift in Sources */,

@@ -84,93 +84,15 @@ class ViewController: UIViewController {
         }
         
         // Week 3
-//        hash()
+        hashFile()
         
         // Week 4
         request()
     }
     
-    func hash() {
-        guard let data = getFileData() else {
-            print("Cannot load file data!")
-            return
-        }
-        var hashed: [UInt8] = []
-        for index in stride(from: data.count - 1, through: 0, by: -1024) {
-            var blockData: [UInt8]
-            if index > 1024 {
-                blockData = Array(data[index - 1023...index])
-            } else {
-                blockData = Array(data[0...index])
-            }
-            if (hashed.count == 0) {
-                hashed = blockData.sha256()
-            } else {
-                blockData += hashed
-                hashed = blockData.sha256()
-            }
-        }
-        print("Hashed hex: \(hashed.toHexString())")
-    }
-    
-    func request() {
-        let iv = "f20bdba6ff29eed7b046d1df9fb70000"
-        let c0 = "58b1ffb4210a580f748b4ac714c001bd"
-        let c1 = "4a61044426fb515dad3f21f18aa577c0"
-        let c2 = "bdf302936266926ff37dbf7035d5eeb4"
-        
-        let c1UInt8Array = c1.transformToArrayUInt8()
-        
-        for padding in 1...16 {
-            let expectPadding = expectPadding(UInt8(padding))
-            for supposeG in 0..<256 {
-                let guessG = g(UInt8(supposeG))
-                let xorCipher = iv + c0 + "\(xor(xor(c1UInt8Array, expectPadding), guessG).transformToHex())" + c2
-                ResourceRequest<Int, Int>(resourcePath: xorCipher).get { result in
-                    switch result {
-                    case .failure(let code):
-                        print("\(guessG) --- \(expectPadding) - \(code)")
-                        if code == 404 {
-                            print(xorCipher)
-                        }
-                        break
-                    }
-                }
-                Thread.sleep(forTimeInterval: 0.1)
-            }
-        }
-    }
-    
-    func expectPadding(_ paddingElementValue: UInt8) -> [UInt8] {
-        var padding = Array(repeating: UInt8(0), count: 16)
-        for index in (padding.count-Int(paddingElementValue))..<padding.count {
-            padding[index] = paddingElementValue
-        }
-        return padding
-    }
-    
-    func g(_ supposeG: UInt8) -> [UInt8] {
-        var g = Array(repeating: UInt8(0), count: 16)
-        g[g.count-1] = supposeG
-        return g
-    }
-    
-    func xor(_ l: [UInt8], _ r: [UInt8]) -> [UInt8] {
-        var result = Array(repeating: UInt8(0), count: 16)
-        for index in 0..<result.count {
-            result[index] = l[index] ^ r[index]
-        }
-        print(l)
-        print(r)
-        print(result)
-        return result
-    }
     
     
-    
-    
-    
-    func getFileData() -> [UInt8]? {
+    static func getFileData() -> [UInt8]? {
         guard let path = Bundle.main.path(forResource: "6.1.intro.mp4_download", ofType: "") else {
             print("Cannot find file in Main Bundle!")
             return nil
@@ -241,9 +163,9 @@ extension Array where Element == UInt8 {
     
     func transformToHex() -> String {
         let hexValueTable = ["0", "1", "2", "3",
-                        "4", "5", "6", "7",
-                        "8", "9", "a", "b",
-                        "c", "d", "e", "f"]
+                             "4", "5", "6", "7",
+                             "8", "9", "a", "b",
+                             "c", "d", "e", "f"]
         var hexString = ""
         for number in self {
             let decimal = Int(number)
